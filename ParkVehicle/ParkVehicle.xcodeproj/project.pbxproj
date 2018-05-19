@@ -77,11 +77,14 @@
 		F96084EE20AEFCF700E51C14 /* ParkVehicle */ = {
 			isa = PBXGroup;
 			children = (
+				F960851420AF3D6900E51C14 /* Storyboard */,
+				F960851320AF3D4D00E51C14 /* Controllers */,
+				F960851220AF3D3F00E51C14 /* Brand */,
+				F960851120AF3CD700E51C14 /* Frameworks */,
+				F960851020AF21E900E51C14 /* Supporting files */,
+				F960850F20AF21D900E51C14 /* Utility */,
 				F96084EF20AEFCF700E51C14 /* AppDelegate.swift */,
-				F96084F120AEFCF700E51C14 /* ViewController.swift */,
-				F96084F320AEFCF700E51C14 /* Main.storyboard */,
 				F96084F620AEFD0B00E51C14 /* Assets.xcassets */,
-				F96084F820AEFD0B00E51C14 /* LaunchScreen.storyboard */,
 				F96084FB20AEFD0B00E51C14 /* Info.plist */,
 			);
 			path = ParkVehicle;
@@ -94,6 +97,51 @@
 				F960850620AEFD0C00E51C14 /* Info.plist */,
 			);
 			path = ParkVehicleTests;
+			sourceTree = "<group>";
+		};
+		F960850F20AF21D900E51C14 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F960851020AF21E900E51C14 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		F960851120AF3CD700E51C14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		F960851220AF3D3F00E51C14 /* Brand */ = {
+			isa = PBXGroup;
+			children = (
+				F96084F820AEFD0B00E51C14 /* LaunchScreen.storyboard */,
+			);
+			path = Brand;
+			sourceTree = "<group>";
+		};
+		F960851320AF3D4D00E51C14 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F96084F120AEFCF700E51C14 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F960851420AF3D6900E51C14 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F96084F320AEFCF700E51C14 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
