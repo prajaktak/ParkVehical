@@ -13,6 +13,9 @@
 		F96084F720AEFD0B00E51C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96084F620AEFD0B00E51C14 /* Assets.xcassets */; };
 		F96084FA20AEFD0B00E51C14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96084F820AEFD0B00E51C14 /* LaunchScreen.storyboard */; };
 		F960850520AEFD0C00E51C14 /* ParkVehicleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960850420AEFD0C00E51C14 /* ParkVehicleTests.swift */; };
+		F960852420B0916800E51C14 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960852320B0916800E51C14 /* APIManager.swift */; };
+		F960852620B1775100E51C14 /* API.plist in Resources */ = {isa = PBXBuildFile; fileRef = F960852520B1775100E51C14 /* API.plist */; };
+		F960852920B197F100E51C14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960852820B197F100E51C14 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		F960850020AEFD0C00E51C14 /* ParkVehicleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkVehicleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F960850420AEFD0C00E51C14 /* ParkVehicleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkVehicleTests.swift; sourceTree = "<group>"; };
 		F960850620AEFD0C00E51C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F960852320B0916800E51C14 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F960852520B1775100E51C14 /* API.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = API.plist; sourceTree = "<group>"; };
+		F960852820B197F100E51C14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		F96084EE20AEFCF700E51C14 /* ParkVehicle */ = {
 			isa = PBXGroup;
 			children = (
+				F960852720B197C400E51C14 /* Model */,
 				F960851420AF3D6900E51C14 /* Storyboard */,
 				F960851320AF3D4D00E51C14 /* Controllers */,
 				F960851220AF3D3F00E51C14 /* Brand */,
@@ -102,6 +109,8 @@
 		F960850F20AF21D900E51C14 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F960852320B0916800E51C14 /* APIManager.swift */,
+				F960852520B1775100E51C14 /* API.plist */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -142,6 +151,14 @@
 				F96084F320AEFCF700E51C14 /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F960852720B197C400E51C14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F960852820B197F100E51C14 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +244,7 @@
 			files = (
 				F96084FA20AEFD0B00E51C14 /* LaunchScreen.storyboard in Resources */,
 				F96084F720AEFD0B00E51C14 /* Assets.xcassets in Resources */,
+				F960852620B1775100E51C14 /* API.plist in Resources */,
 				F96084F520AEFCF700E51C14 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F960852920B197F100E51C14 /* User.swift in Sources */,
+				F960852420B0916800E51C14 /* APIManager.swift in Sources */,
 				F96084F220AEFCF700E51C14 /* ViewController.swift in Sources */,
 				F96084F020AEFCF700E51C14 /* AppDelegate.swift in Sources */,
 			);
