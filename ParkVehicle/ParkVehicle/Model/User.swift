@@ -10,8 +10,10 @@ import Foundation
 
 struct User: Codable{
     var userId:String
+    var userDetails:UserDetails
+}
+struct UserDetails:Codable{
     var firstName:String
     var lastName:String
     var username:String
-    
 }

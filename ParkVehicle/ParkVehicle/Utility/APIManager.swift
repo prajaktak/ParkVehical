@@ -7,9 +7,6 @@
 //
 
 import Foundation
-struct Post : Decodable,Encodable{
-    
-}
 
 class APIManager{
     enum Result<Value> {
@@ -17,7 +14,9 @@ class APIManager{
         case failure(Error)
     }
     
-    func getPosts(for userId: Int, path:String, completion: ((Result<[Post]>) -> Void)?) {
+   
+    
+    func getPosts(for userId: Int, path:String, completion: ((Result<Data>) -> Void)?) {
         var urlComponents = URLComponents()
         var myDict: NSDictionary?
         if let path = Bundle.main.path(forResource: "API", ofType: "plist") {
@@ -27,10 +26,10 @@ class APIManager{
             urlComponents.scheme = dict.value(forKey: "scheme") as? String
             urlComponents.host = dict.value(forKey: "host") as? String
             urlComponents.path = path
-            let userIdItem = URLQueryItem(name: "userId", value: "\(userId)")
-            urlComponents.queryItems = [userIdItem]
+            
             guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
             
+            print(url)
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             
@@ -46,17 +45,19 @@ class APIManager{
                         
                         // Create an instance of JSONDecoder to decode the JSON data to our
                         // Codable struct
-                        let decoder = JSONDecoder()
+                        //let decoder = JSONDecoder()
                         
                         do {
                             // We would use Post.self for JSON representing a single Post
                             // object, and [Post].self for JSON representing an array of
                             // Post objects
-                            let posts = try decoder.decode([Post].self, from: jsonData)
-                            completion?(.success(posts))
-                        } catch {
-                            completion?(.failure(error))
+//                            let posts = try decoder.decode(User.self, from: jsonData)
+//                            completion?(.success(posts))
+                            completion?(.success(jsonData))
                         }
+//                        catch {
+//                            completion?(.failure(error))
+//                        }
                     } else {
                         let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
                         completion?(.failure(error))
@@ -68,8 +69,16 @@ class APIManager{
         }
         
     }
+    func waitForFive(completion : @escaping (Int)->Void) {
+        DispatchQueue.main.async {
+            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { (timer) in
+                completion(5)
+            })
+        }
+       // completion(0)
+    }
     
-    func submitPost(post: Post, completion:((Error?) -> Void)?) {
+    func submitPost(post: User, completion:((Error?) -> Void)?) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "jsonplaceholder.typicode.com"

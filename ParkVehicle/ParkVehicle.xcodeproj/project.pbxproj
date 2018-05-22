@@ -109,8 +109,8 @@
 		F960850F20AF21D900E51C14 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				F960852320B0916800E51C14 /* APIManager.swift */,
 				F960852520B1775100E51C14 /* API.plist */,
+				F960852320B0916800E51C14 /* APIManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
