@@ -10,8 +10,12 @@ import Foundation
 
 struct ParkingAction{
     var id:String
-    var startDate:Date
-    var stopDate: Date
+    var parkingActionDetails:ParkingActionDetails
+    
+}
+struct ParkingActionDetails {
+    var startDate:String
+    var stopDate: String
     var userId:String
     var vehicleId: String
     var zoneId:String

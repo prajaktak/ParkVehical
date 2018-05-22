@@ -31,6 +31,8 @@
 		F960854620B4597C00E51C14 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854520B4597C00E51C14 /* MenuViewController.swift */; };
 		F960854920B4617400E51C14 /* ParkingActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854820B4617400E51C14 /* ParkingActionViewController.swift */; };
 		F960854B20B467F600E51C14 /* ParkingActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854A20B467F600E51C14 /* ParkingActionTableViewCell.swift */; };
+		F960854D20B496FE00E51C14 /* ParkingHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854C20B496FE00E51C14 /* ParkingHistoryViewController.swift */; };
+		F960854F20B497A300E51C14 /* ParkingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854E20B497A300E51C14 /* ParkingAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		F960854520B4597C00E51C14 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F960854820B4617400E51C14 /* ParkingActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingActionViewController.swift; sourceTree = "<group>"; };
 		F960854A20B467F600E51C14 /* ParkingActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingActionTableViewCell.swift; sourceTree = "<group>"; };
+		F960854C20B496FE00E51C14 /* ParkingHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingHistoryViewController.swift; sourceTree = "<group>"; };
+		F960854E20B497A300E51C14 /* ParkingAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 				F960854520B4597C00E51C14 /* MenuViewController.swift */,
 				F960854820B4617400E51C14 /* ParkingActionViewController.swift */,
 				F960854A20B467F600E51C14 /* ParkingActionTableViewCell.swift */,
+				F960854C20B496FE00E51C14 /* ParkingHistoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 		F960852720B197C400E51C14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F960854E20B497A300E51C14 /* ParkingAction.swift */,
 				F960854220B438E200E51C14 /* Vehicle.swift */,
 				F960852820B197F100E51C14 /* User.swift */,
 				F960853020B3FD4300E51C14 /* Zone.swift */,
@@ -301,10 +307,12 @@
 				F960852920B197F100E51C14 /* User.swift in Sources */,
 				F960853620B4030100E51C14 /* KeychainStorageManger.swift in Sources */,
 				F960852420B0916800E51C14 /* APIManager.swift in Sources */,
+				F960854D20B496FE00E51C14 /* ParkingHistoryViewController.swift in Sources */,
 				F960853920B4157600E51C14 /* KeychainPasswordItem.swift in Sources */,
 				F960854B20B467F600E51C14 /* ParkingActionTableViewCell.swift in Sources */,
 				F960853320B3FE1800E51C14 /* StartParkingViewController.swift in Sources */,
 				F960854020B4187400E51C14 /* Constants.swift in Sources */,
+				F960854F20B497A300E51C14 /* ParkingAction.swift in Sources */,
 				F96084F220AEFCF700E51C14 /* ViewController.swift in Sources */,
 				F960854620B4597C00E51C14 /* MenuViewController.swift in Sources */,
 				F960853C20B4159100E51C14 /* KeychainConfiguration.swift in Sources */,
