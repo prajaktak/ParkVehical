@@ -14,6 +14,7 @@ class StartParkingViewController: UIViewController,MKMapViewDelegate  {
 
     let apiManager =  APIManager()
     var zonesArray:[Zone]?
+    var vehiclesArraay:[Vehicle]?
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var selectedZoneLabel: UILabel!
@@ -23,7 +24,62 @@ class StartParkingViewController: UIViewController,MKMapViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getZones()
+        self.getVehicles()
         // Do any additional setup after loading the view.
+    }
+    func getVehicles()
+    {
+        var myDict: NSDictionary?
+        if let path = Bundle.main.path(forResource: "API", ofType: "plist") {
+            myDict = NSDictionary(contentsOfFile: path)
+        }
+        apiManager.getPosts(for: 1, path: myDict?.value(forKey: "GetVehicle") as! String){ (result) in
+            
+            // var data:User
+            switch result{
+            case .success(let value):
+                do{
+                    let data:NSDictionary = try JSONSerialization.jsonObject(with: value, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+                    print(data)
+                    self.vehiclesArraay = self.getVehicleObjects(vehicleInformationArray: data.allValues as NSArray, vehicleIdArray: data.allKeys as NSArray)
+                    self.updateDefaultVehicle()
+                    //data = try JSONDecoder().decode(User.self, from: value)
+                    
+                }catch{
+                    
+                }
+                break
+            case.failure(let error):
+                print(error)
+                break
+            }
+        }
+    }
+    func updateDefaultVehicle() {
+        let userId = KeychainStorageManager.getUserIdFromKeychainStorage(accountName: Constants.keychainAccountName)
+        let currentUserVehicle = self.vehiclesArraay?.filter({ (filterVehicle) -> Bool in
+            filterVehicle.vehicleDetails.userId == userId
+        })
+        if let title = currentUserVehicle?.first?.vehicleDetails.title{
+            self.selectedVehicleLabel.text = Constants.selectedVehicleTitle + title
+        }
+        else
+        {
+            self.selectedVehicleLabel.text = Constants.selectedVehicleTitle + "No vehicle added."
+        }
+    }
+    func getVehicleObjects(vehicleInformationArray : NSArray,vehicleIdArray:NSArray) -> [Vehicle] {
+        var vehicleObjects = [Vehicle]()
+        for index in 0...vehicleInformationArray.count-1{
+            let vehicleID = vehicleIdArray[index] as! String
+            let isDefault = (vehicleInformationArray[index] as! NSDictionary).value(forKey: "isDefault")
+            let title = (vehicleInformationArray[index] as! NSDictionary).value(forKey: "title") as! String
+            let userId = (vehicleInformationArray[index] as! NSDictionary).value(forKey: "userId") as! String
+            let vrn = (vehicleInformationArray[index] as! NSDictionary).value(forKey: "vrn")as! String
+            let vehicleObject = Vehicle(vehicleId: vehicleID, vehicleDetails: VehicleDetails(isDefault: isDefault as? Bool, title: title, userId: userId, vrn: vrn))
+            vehicleObjects.append(vehicleObject)
+        }
+        return vehicleObjects
     }
     func getZones()
     {

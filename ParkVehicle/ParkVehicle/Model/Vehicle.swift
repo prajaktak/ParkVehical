@@ -13,7 +13,7 @@ struct Vehicle:Codable {
     var vehicleDetails:VehicleDetails
 }
 struct VehicleDetails:Codable {
-    var isDefault:Bool
+    var isDefault:Bool?
     var title:String
     var userId:String
     var vrn: String
