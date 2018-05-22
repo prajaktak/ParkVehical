@@ -31,7 +31,7 @@ class ParkVehicleTests: XCTestCase {
         }
         let expect = expectation(description: "get users from API")
         //when
-        apiManager.getPosts(for: 1, path: myDict?.value(forKey: "GetUser") as! String){ (result) in
+        apiManager.GetData(form: myDict?.value(forKey: "GetUser") as! String){ (result) in
             
            // var data:User
             switch result{
@@ -66,7 +66,7 @@ class ParkVehicleTests: XCTestCase {
         }
         let expect = expectation(description: "get vehicle from api")
         //when
-        apiManager.getPosts(for: 1, path: myDict?.value(forKey: "GetVehicle") as! String){ (result) in
+        apiManager.GetData(form:myDict?.value(forKey: "GetVehicle") as! String){ (result) in
             
             // var data:User
             switch result{
@@ -98,7 +98,7 @@ class ParkVehicleTests: XCTestCase {
         }
         let expect = expectation(description: "get zones from api")
         //when
-        apiManager.getPosts(for: 1, path: myDict?.value(forKey: "GetZones") as! String){ (result) in
+        apiManager.GetData(form:myDict?.value(forKey: "GetZones") as! String){ (result) in
             
             // var data:User
             switch result{
@@ -122,6 +122,25 @@ class ParkVehicleTests: XCTestCase {
         //then
         
         
+    }
+    func testPostDataToParkingAction() {
+        //given
+        var myDict: NSDictionary?
+        if let path = Bundle.main.path(forResource: "API", ofType: "plist") {
+            myDict = NSDictionary(contentsOfFile: path)
+        }
+        let dataDictionary:NSDictionary = NSDictionary(dictionaryLiteral: ("userId","-LA55HuEow2e-U1BdLUK"),("vehicleId","-LD75PQgAmweK26hegu3"),("zoneID","-LD6UIIDwjyH-RMMKWfS"),("startDate","22-05-2018"))
+        let expect = expectation(description: "Save data by create parking action api")
+        
+        //when
+        apiManager.post(data: dataDictionary, path:myDict?.value(forKey: "CreateParkingAction") as! String) { (error,string) in
+            
+            //then
+            XCTAssertNil(error)
+            XCTAssertNotNil(string)
+            expect.fulfill()
+        }
+        wait(for: [expect], timeout: 20)
     }
 
     

@@ -35,7 +35,7 @@ class StartParkingViewController: UIViewController,MKMapViewDelegate  {
         if let path = Bundle.main.path(forResource: "API", ofType: "plist") {
             myDict = NSDictionary(contentsOfFile: path)
         }
-        apiManager.getPosts(for: 1, path: myDict?.value(forKey: "GetVehicle") as! String){ (result) in
+        apiManager.GetData(form: myDict?.value(forKey: "GetVehicle") as! String){ (result) in
             
             // var data:User
             switch result{
@@ -90,7 +90,7 @@ class StartParkingViewController: UIViewController,MKMapViewDelegate  {
         if let path = Bundle.main.path(forResource: "API", ofType: "plist") {
             myDict = NSDictionary(contentsOfFile: path)
         }
-        apiManager.getPosts(for: 1, path: myDict?.value(forKey: "GetZones") as! String){ (result) in
+        apiManager.GetData( form: myDict?.value(forKey: "GetZones") as! String){ (result) in
             
             // var data:User
             switch result{

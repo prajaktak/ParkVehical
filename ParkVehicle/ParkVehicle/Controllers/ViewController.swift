@@ -28,7 +28,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     func getUsers()
     {
-        apiManager.getPosts(for: 1, path: myDict?.value(forKey: "GetUser") as! String){ (result) in
+        apiManager.GetData(form: myDict?.value(forKey: "GetUser") as! String){(result) in
             
             // var data:User
             switch result{
