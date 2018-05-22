@@ -10,9 +10,11 @@ import XCTest
 @testable import ParkVehicle
 
 class ParkVehicleTests: XCTestCase {
-    
+    var apiManager:APIManager!
     override func setUp() {
         super.setUp()
+         apiManager =  APIManager()
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -20,10 +22,52 @@ class ParkVehicleTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAsyncFive()
+    {
+        //given
+        let expect = expectation(description: "waitForFive")
+        
+        //when
+        apiManager.waitForFive(){(result) in
+            assert(result == 5)
+            expect.fulfill()
+
+        }
+        wait(for: [expect], timeout: 10)
+    }
+    func testValidUsersApiCallReturnsListOfUsers()
+    {
+        //given
+        var myDict: NSDictionary?
+        if let path = Bundle.main.path(forResource: "API", ofType: "plist") {
+            myDict = NSDictionary(contentsOfFile: path)
+        }
+        let expect = expectation(description: "getPosts")
+        //when
+        apiManager.getPosts(for: 1, path: myDict?.value(forKey: "GetUser") as! String){ (result) in
+            
+           // var data:User
+            switch result{
+            case .success(let value):
+                do{
+                    let data:NSDictionary = try JSONSerialization.jsonObject(with: value, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+                    //data = try JSONDecoder().decode(User.self, from: value)
+                    
+                    print(data.allKeys)
+                }catch{
+                    
+                }
+                break
+            case.failure(let error):
+                print(error)
+                break
+            }
+            expect.fulfill()
+        }
+        wait(for: [expect], timeout: 10)
+        //then
+        
+        
     }
     
     func testPerformanceExample() {
