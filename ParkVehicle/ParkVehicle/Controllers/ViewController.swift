@@ -93,7 +93,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let userId = usersArray![indexPath.row].userId
+        KeychainStorageManager.saveUserIDToKeychainStorage(selectedUserId: userId, accountName: Constants.keychainAccountName)
+        //print(KeychainStorageManager.getUserIdFromKeychainStorage(accountName: Constants.keychainAccountName))
+        self.performSegue(withIdentifier:"showStartParkingView", sender: self)
     }
  
 }

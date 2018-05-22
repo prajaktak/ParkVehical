@@ -16,6 +16,18 @@
 		F960852420B0916800E51C14 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960852320B0916800E51C14 /* APIManager.swift */; };
 		F960852620B1775100E51C14 /* API.plist in Resources */ = {isa = PBXBuildFile; fileRef = F960852520B1775100E51C14 /* API.plist */; };
 		F960852920B197F100E51C14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960852820B197F100E51C14 /* User.swift */; };
+		F960853120B3FD4300E51C14 /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960853020B3FD4300E51C14 /* Zone.swift */; };
+		F960853320B3FE1800E51C14 /* StartParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960853220B3FE1800E51C14 /* StartParkingViewController.swift */; };
+		F960853620B4030100E51C14 /* KeychainStorageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960853520B4030100E51C14 /* KeychainStorageManger.swift */; };
+		F960853720B4030100E51C14 /* KeychainStorageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960853520B4030100E51C14 /* KeychainStorageManger.swift */; };
+		F960853920B4157600E51C14 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960853820B4157600E51C14 /* KeychainPasswordItem.swift */; };
+		F960853A20B4157600E51C14 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960853820B4157600E51C14 /* KeychainPasswordItem.swift */; };
+		F960853C20B4159100E51C14 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960853B20B4159100E51C14 /* KeychainConfiguration.swift */; };
+		F960853D20B4159100E51C14 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960853B20B4159100E51C14 /* KeychainConfiguration.swift */; };
+		F960854020B4187400E51C14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960853F20B4187400E51C14 /* Constants.swift */; };
+		F960854120B4187400E51C14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960853F20B4187400E51C14 /* Constants.swift */; };
+		F960854320B438E200E51C14 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854220B438E200E51C14 /* Vehicle.swift */; };
+		F960854420B438E200E51C14 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854220B438E200E51C14 /* Vehicle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +54,13 @@
 		F960852320B0916800E51C14 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F960852520B1775100E51C14 /* API.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = API.plist; sourceTree = "<group>"; };
 		F960852820B197F100E51C14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F960853020B3FD4300E51C14 /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
+		F960853220B3FE1800E51C14 /* StartParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartParkingViewController.swift; sourceTree = "<group>"; };
+		F960853520B4030100E51C14 /* KeychainStorageManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorageManger.swift; sourceTree = "<group>"; };
+		F960853820B4157600E51C14 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		F960853B20B4159100E51C14 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
+		F960853F20B4187400E51C14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F960854220B438E200E51C14 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +128,12 @@
 		F960850F20AF21D900E51C14 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F960853B20B4159100E51C14 /* KeychainConfiguration.swift */,
+				F960853820B4157600E51C14 /* KeychainPasswordItem.swift */,
 				F960852520B1775100E51C14 /* API.plist */,
 				F960852320B0916800E51C14 /* APIManager.swift */,
+				F960853520B4030100E51C14 /* KeychainStorageManger.swift */,
+				F960853F20B4187400E51C14 /* Constants.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -141,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				F96084F120AEFCF700E51C14 /* ViewController.swift */,
+				F960853220B3FE1800E51C14 /* StartParkingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -156,7 +180,9 @@
 		F960852720B197C400E51C14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F960854220B438E200E51C14 /* Vehicle.swift */,
 				F960852820B197F100E51C14 /* User.swift */,
+				F960853020B3FD4300E51C14 /* Zone.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,9 +290,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F960852920B197F100E51C14 /* User.swift in Sources */,
+				F960853620B4030100E51C14 /* KeychainStorageManger.swift in Sources */,
 				F960852420B0916800E51C14 /* APIManager.swift in Sources */,
+				F960853920B4157600E51C14 /* KeychainPasswordItem.swift in Sources */,
+				F960853320B3FE1800E51C14 /* StartParkingViewController.swift in Sources */,
+				F960854020B4187400E51C14 /* Constants.swift in Sources */,
 				F96084F220AEFCF700E51C14 /* ViewController.swift in Sources */,
+				F960853C20B4159100E51C14 /* KeychainConfiguration.swift in Sources */,
+				F960854320B438E200E51C14 /* Vehicle.swift in Sources */,
 				F96084F020AEFCF700E51C14 /* AppDelegate.swift in Sources */,
+				F960853120B3FD4300E51C14 /* Zone.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F960853720B4030100E51C14 /* KeychainStorageManger.swift in Sources */,
 				F960850520AEFD0C00E51C14 /* ParkVehicleTests.swift in Sources */,
+				F960853A20B4157600E51C14 /* KeychainPasswordItem.swift in Sources */,
+				F960854420B438E200E51C14 /* Vehicle.swift in Sources */,
+				F960853D20B4159100E51C14 /* KeychainConfiguration.swift in Sources */,
+				F960854120B4187400E51C14 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

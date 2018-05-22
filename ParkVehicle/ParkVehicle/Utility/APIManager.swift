@@ -69,14 +69,6 @@ class APIManager{
         }
         
     }
-    func waitForFive(completion : @escaping (Int)->Void) {
-        DispatchQueue.main.async {
-            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { (timer) in
-                completion(5)
-            })
-        }
-       // completion(0)
-    }
     
     func submitPost(post: User, completion:((Error?) -> Void)?) {
         var urlComponents = URLComponents()

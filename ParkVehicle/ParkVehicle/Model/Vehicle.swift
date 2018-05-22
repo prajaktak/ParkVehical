@@ -10,6 +10,9 @@ import Foundation
 
 struct Vehicle:Codable {
     var vehicleId:String
+    var vehicleDetails:VehicleDetails
+}
+struct VehicleDetails:Codable {
     var isDefault:Bool
     var title:String
     var userId:String

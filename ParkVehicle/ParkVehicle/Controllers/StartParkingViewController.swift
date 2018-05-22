@@ -1,0 +1,113 @@
+//
+//  StartParkingViewController.swift
+//  ParkVehicle
+//
+//  Created by Prajakta Kulkarni on 22/05/2018.
+//  Copyright © 2018 Prajakta Kulkarni. All rights reserved.
+//
+
+import UIKit
+import MapKit
+import CoreLocation
+
+class StartParkingViewController: UIViewController,MKMapViewDelegate  {
+
+    let apiManager =  APIManager()
+    var zonesArray:[Zone]?
+    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var selectedZoneLabel: UILabel!
+    @IBOutlet weak var selectedVehicleLabel: UILabel!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.getZones()
+        // Do any additional setup after loading the view.
+    }
+    func getZones()
+    {
+        var myDict: NSDictionary?
+        if let path = Bundle.main.path(forResource: "API", ofType: "plist") {
+            myDict = NSDictionary(contentsOfFile: path)
+        }
+        apiManager.getPosts(for: 1, path: myDict?.value(forKey: "GetZones") as! String){ (result) in
+            
+            // var data:User
+            switch result{
+            case .success(let value):
+                do{
+                    let data:NSDictionary = try JSONSerialization.jsonObject(with: value, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+                    self.zonesArray = self.getZoneObjects(zoneInformationArray: data.allValues as NSArray, zoneIdArray: data.allKeys as NSArray)
+                    self.showZonesOnMap()
+                    //data = try JSONDecoder().decode(User.self, from: value)
+                    
+                    print(data)
+                }catch{
+                    
+                }
+                break
+            case.failure(let error):
+                print(error)
+                break
+            }
+        }
+    }
+    func getZoneObjects(zoneInformationArray : NSArray,zoneIdArray:NSArray) -> [Zone] {
+        var zoneObjects = [Zone]()
+        for index in 0...zoneInformationArray.count-1{
+            let zoneID = zoneIdArray[index] as! String
+            let address = (zoneInformationArray[index] as! NSDictionary).value(forKey: "address")as! String
+            let lat = (zoneInformationArray[index] as! NSDictionary).value(forKey: "lat")
+            let lon = (zoneInformationArray[index] as! NSDictionary).value(forKey: "lon")
+            let tariff = (zoneInformationArray[index] as! NSDictionary).value(forKey: "tariff")as! String
+            let zoneObject = Zone(zoneId: zoneID, zoneDetails: ZoneDetails(address: address, lat: lat as? Double, lon: lon as? Double, tariff: tariff))
+            zoneObjects.append(zoneObject)
+        }
+        return zoneObjects
+    }
+    func showZonesOnMap() -> Void {
+        let location =  CLLocationCoordinate2DMake(Constants.amsterdamLat, Constants.amsterdamLon)
+        let span = MKCoordinateSpanMake(Constants.latSpanDelta, Constants.lonSpanDelta)
+        let region = MKCoordinateRegionMake(location, span)
+        mapView.setRegion(region, animated: true)
+        
+        for index in (zonesArray?.indices)!{
+            if let lat  = zonesArray![index].zoneDetails.lat, let lon = zonesArray![index].zoneDetails.lon{
+                let locationForAnnotation = CLLocationCoordinate2DMake(lat,lon)
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = locationForAnnotation
+                annotation.title = zonesArray![index].zoneDetails.address
+                mapView.addAnnotation(annotation)
+            }
+        }
+        
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: - Actions
+    @IBAction func startParkingAction(_ sender: UIButton) {
+        
+    }
+    @IBAction func menuAction(_ sender: UIButton) {
+        
+    }
+    
+    //MARK: - mapKit
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        self.selectedZoneLabel.text = Constants.selectedZoneTitle + ((view.annotation?.title)!)!
+    }
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
