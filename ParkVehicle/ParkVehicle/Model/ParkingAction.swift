@@ -14,9 +14,9 @@ struct ParkingAction{
     
 }
 struct ParkingActionDetails {
-    var startDate:String
-    var stopDate: String
-    var userId:String
-    var vehicleId: String
-    var zoneId:String
+    var startDate:String?
+    var stopDate: String?
+    var userId:String?
+    var vehicleId: String?
+    var zoneId:String?
 }
