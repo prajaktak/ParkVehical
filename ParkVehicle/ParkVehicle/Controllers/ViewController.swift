@@ -95,6 +95,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let userId = usersArray![indexPath.row].userId
         KeychainStorageManager.saveUserIDToKeychainStorage(selectedUserId: userId, accountName: Constants.keychainAccountName)
+        let dict = NSDictionary(dictionaryLiteral: ("firstName",usersArray![indexPath.row].userDetails.firstName),("lastName",usersArray![indexPath.row].userDetails.lastName),("userName",usersArray![indexPath.row].userDetails.username))
+        
+        UserDefaults.standard.setValue(dict, forKey: userId)
         //print(KeychainStorageManager.getUserIdFromKeychainStorage(accountName: Constants.keychainAccountName))
         self.performSegue(withIdentifier:"showStartParkingView", sender: self)
     }

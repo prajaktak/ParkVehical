@@ -15,6 +15,8 @@ class StartParkingViewController: UIViewController,MKMapViewDelegate  {
     let apiManager =  APIManager()
     var zonesArray:[Zone]?
     var vehiclesArraay:[Vehicle]?
+    var selectedZone:Zone?
+    var selectedVehicle:Vehicle?
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var selectedZoneLabel: UILabel!
@@ -60,6 +62,7 @@ class StartParkingViewController: UIViewController,MKMapViewDelegate  {
         let currentUserVehicle = self.vehiclesArraay?.filter({ (filterVehicle) -> Bool in
             filterVehicle.vehicleDetails.userId == userId
         })
+        self.selectedVehicle = currentUserVehicle?.first
         if let title = currentUserVehicle?.first?.vehicleDetails.title{
             self.selectedVehicleLabel.text = Constants.selectedVehicleTitle + title
         }
@@ -138,6 +141,24 @@ class StartParkingViewController: UIViewController,MKMapViewDelegate  {
             }
         }
         
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showParkingActionView" {
+            let viewController = segue.destination as! ParkingActionViewController
+            viewController.parkingActionDetails = NSMutableDictionary.init()
+            let user = UserDefaults.standard.value(forKey: KeychainStorageManager.getUserIdFromKeychainStorage(accountName: Constants.keychainAccountName)) as! NSDictionary
+            viewController.parkingActionDetails.setValue(user.value(forKey: "userName"), forKey: "userName")
+            viewController.parkingActionDetails.setValue(zonesArray?.filter({ (currentZone) -> Bool in
+                (((self.selectedZoneLabel.text?.range(of: currentZone.zoneDetails.address)) != nil))
+            }).first?.zoneId, forKey: "zoneId")
+            viewController.parkingActionDetails.setValue(self.selectedVehicle?.vehicleId, forKey: "vehicleId")
+            let formatter = DateFormatter()
+            // initially set the format based on your datepicker date / server String
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            
+            let myString = formatter.string(from: Date())
+            viewController.parkingActionDetails.setValue(myString, forKey: "Start time")
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
