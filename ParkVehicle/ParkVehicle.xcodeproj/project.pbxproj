@@ -28,6 +28,7 @@
 		F960854120B4187400E51C14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960853F20B4187400E51C14 /* Constants.swift */; };
 		F960854320B438E200E51C14 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854220B438E200E51C14 /* Vehicle.swift */; };
 		F960854420B438E200E51C14 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854220B438E200E51C14 /* Vehicle.swift */; };
+		F960854620B4597C00E51C14 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854520B4597C00E51C14 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		F960853B20B4159100E51C14 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
 		F960853F20B4187400E51C14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F960854220B438E200E51C14 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		F960854520B4597C00E51C14 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				F96084F120AEFCF700E51C14 /* ViewController.swift */,
 				F960853220B3FE1800E51C14 /* StartParkingViewController.swift */,
+				F960854520B4597C00E51C14 /* MenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				F960853320B3FE1800E51C14 /* StartParkingViewController.swift in Sources */,
 				F960854020B4187400E51C14 /* Constants.swift in Sources */,
 				F96084F220AEFCF700E51C14 /* ViewController.swift in Sources */,
+				F960854620B4597C00E51C14 /* MenuViewController.swift in Sources */,
 				F960853C20B4159100E51C14 /* KeychainConfiguration.swift in Sources */,
 				F960854320B438E200E51C14 /* Vehicle.swift in Sources */,
 				F96084F020AEFCF700E51C14 /* AppDelegate.swift in Sources */,
