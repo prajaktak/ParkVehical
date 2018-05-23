@@ -224,7 +224,7 @@
         <!--User Profile-->
         <scene sceneID="8zb-7T-ZMP">
             <objects>
-                <viewController id="35W-WK-BZh" userLabel="User Profile" sceneMemberID="viewController">
+                <viewController id="35W-WK-BZh" userLabel="User Profile" customClass="ProfileViewController" customModule="ParkVehicle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="liV-2y-c5e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,7 +239,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yRe-18-GZE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="yRe-18-GZE">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yRe-18-GZE" id="tpE-Kb-Nkn">
@@ -248,11 +248,18 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="35W-WK-BZh" id="a2J-31-iZU"/>
+                                    <outlet property="delegate" destination="35W-WK-BZh" id="xja-Nq-9h0"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="m7i-PN-mtj"/>
                     </view>
+                    <connections>
+                        <outlet property="profileTable" destination="kON-Wz-ccT" id="CPW-d9-sAQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCS-ym-Kgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

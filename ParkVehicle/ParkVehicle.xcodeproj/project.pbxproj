@@ -33,6 +33,7 @@
 		F960854B20B467F600E51C14 /* ParkingActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854A20B467F600E51C14 /* ParkingActionTableViewCell.swift */; };
 		F960854F20B497A300E51C14 /* ParkingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854E20B497A300E51C14 /* ParkingAction.swift */; };
 		F960855120B4B32B00E51C14 /* ParkingHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960855020B4B32800E51C14 /* ParkingHistoryViewController.swift */; };
+		F960855320B4D1C400E51C14 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960855220B4D1C400E51C14 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		F960854A20B467F600E51C14 /* ParkingActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingActionTableViewCell.swift; sourceTree = "<group>"; };
 		F960854E20B497A300E51C14 /* ParkingAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingAction.swift; sourceTree = "<group>"; };
 		F960855020B4B32800E51C14 /* ParkingHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingHistoryViewController.swift; sourceTree = "<group>"; };
+		F960855220B4D1C400E51C14 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				F960854520B4597C00E51C14 /* MenuViewController.swift */,
 				F960854820B4617400E51C14 /* ParkingActionViewController.swift */,
 				F960854A20B467F600E51C14 /* ParkingActionTableViewCell.swift */,
+				F960855220B4D1C400E51C14 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				F960853920B4157600E51C14 /* KeychainPasswordItem.swift in Sources */,
 				F960854B20B467F600E51C14 /* ParkingActionTableViewCell.swift in Sources */,
 				F960853320B3FE1800E51C14 /* StartParkingViewController.swift in Sources */,
+				F960855320B4D1C400E51C14 /* ProfileViewController.swift in Sources */,
 				F960854020B4187400E51C14 /* Constants.swift in Sources */,
 				F960854F20B497A300E51C14 /* ParkingAction.swift in Sources */,
 				F96084F220AEFCF700E51C14 /* ViewController.swift in Sources */,
