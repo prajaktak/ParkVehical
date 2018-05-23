@@ -87,7 +87,14 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell?.textLabel?.text = "\(String(describing: userInformation.allKeys[indexPath.row])) : \(String(describing: userInformation.allValues[indexPath.row]))"
         return cell!
     }
-
+    
+    //MARK:- Action
+    
+    @IBAction func backAction(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
