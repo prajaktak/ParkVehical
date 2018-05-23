@@ -34,6 +34,8 @@
 		F960854F20B497A300E51C14 /* ParkingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960854E20B497A300E51C14 /* ParkingAction.swift */; };
 		F960855120B4B32B00E51C14 /* ParkingHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960855020B4B32800E51C14 /* ParkingHistoryViewController.swift */; };
 		F960855320B4D1C400E51C14 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960855220B4D1C400E51C14 /* ProfileViewController.swift */; };
+		F960855520B524CF00E51C14 /* VehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960855420B524CF00E51C14 /* VehicleViewController.swift */; };
+		F960855720B528C300E51C14 /* AddNewVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F960855620B528C300E51C14 /* AddNewVehicleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		F960854E20B497A300E51C14 /* ParkingAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingAction.swift; sourceTree = "<group>"; };
 		F960855020B4B32800E51C14 /* ParkingHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingHistoryViewController.swift; sourceTree = "<group>"; };
 		F960855220B4D1C400E51C14 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F960855420B524CF00E51C14 /* VehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewController.swift; sourceTree = "<group>"; };
+		F960855620B528C300E51C14 /* AddNewVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewVehicleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +122,6 @@
 				F960851420AF3D6900E51C14 /* Storyboard */,
 				F960851320AF3D4D00E51C14 /* Controllers */,
 				F960851220AF3D3F00E51C14 /* Brand */,
-				F960851120AF3CD700E51C14 /* Frameworks */,
 				F960851020AF21E900E51C14 /* Supporting files */,
 				F960850F20AF21D900E51C14 /* Utility */,
 				F96084EF20AEFCF700E51C14 /* AppDelegate.swift */,
@@ -157,13 +160,6 @@
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
-		F960851120AF3CD700E51C14 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 		F960851220AF3D3F00E51C14 /* Brand */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +178,8 @@
 				F960854820B4617400E51C14 /* ParkingActionViewController.swift */,
 				F960854A20B467F600E51C14 /* ParkingActionTableViewCell.swift */,
 				F960855220B4D1C400E51C14 /* ProfileViewController.swift */,
+				F960855420B524CF00E51C14 /* VehicleViewController.swift */,
+				F960855620B528C300E51C14 /* AddNewVehicleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -308,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F960852920B197F100E51C14 /* User.swift in Sources */,
+				F960855520B524CF00E51C14 /* VehicleViewController.swift in Sources */,
 				F960853620B4030100E51C14 /* KeychainStorageManger.swift in Sources */,
 				F960855120B4B32B00E51C14 /* ParkingHistoryViewController.swift in Sources */,
 				F960852420B0916800E51C14 /* APIManager.swift in Sources */,
@@ -322,6 +321,7 @@
 				F960853C20B4159100E51C14 /* KeychainConfiguration.swift in Sources */,
 				F960854320B438E200E51C14 /* Vehicle.swift in Sources */,
 				F960854920B4617400E51C14 /* ParkingActionViewController.swift in Sources */,
+				F960855720B528C300E51C14 /* AddNewVehicleViewController.swift in Sources */,
 				F96084F020AEFCF700E51C14 /* AppDelegate.swift in Sources */,
 				F960853120B3FD4300E51C14 /* Zone.swift in Sources */,
 			);
