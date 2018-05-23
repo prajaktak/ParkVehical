@@ -87,6 +87,12 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell?.textLabel?.text = "\(String(describing: userInformation.allKeys[indexPath.row])) : \(String(describing: userInformation.allValues[indexPath.row]))"
         return cell!
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        if((cell?.textLabel?.text?.range(of: "vehicle")) != nil){
+            self.performSegue(withIdentifier: "showAddNewVehicle", sender: self)
+        }
+    }
     
     //MARK:- Action
     

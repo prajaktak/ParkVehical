@@ -18,13 +18,19 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var usersArray:[User]?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.checkPersistantUserSelection()
         if let path = Bundle.main.path(forResource: "API", ofType: "plist") {
             myDict = NSDictionary(contentsOfFile: path)
         }
         
         getUsers()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    func checkPersistantUserSelection() {
+        let userId = KeychainStorageManager.getUserIdFromKeychainStorage(accountName: Constants.keychainAccountName)
+        if userId != ""  {
+            self.performSegue(withIdentifier: "showStartParkingView", sender: self)
+        }
     }
     func getUsers()
     {
