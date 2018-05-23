@@ -1,2 +1,2 @@
-# ParkVehical
-The application will assist in parking vehical.
+# ParkVehicle
+The application will assist in parking vehicle.
