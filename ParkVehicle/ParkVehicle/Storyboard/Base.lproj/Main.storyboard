@@ -88,9 +88,7 @@
                                 <state key="normal" title="Menu"/>
                                 <connections>
                                     <action selector="menuAction:" destination="xYp-Bt-QXM" eventType="touchUpInside" id="cNa-SV-Kl0"/>
-                                    <segue destination="FS9-tT-hMD" kind="popoverPresentation" identifier="showMenu" popoverAnchorView="tH7-b5-dZs" id="1bz-L9-Nkq">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="FS9-tT-hMD" kind="show" identifier="showMenu" id="e0n-Fq-qy3"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dmp-l8-Npa">
@@ -150,9 +148,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Menu"/>
                                 <connections>
-                                    <segue destination="FS9-tT-hMD" kind="popoverPresentation" identifier="showMenuFromParkingAction" popoverAnchorView="gSr-eq-oYt" id="fm4-HX-dry">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="FS9-tT-hMD" kind="show" identifier="showMenuFromParkingAction" id="e4S-IV-LqU"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NVL-ay-3m0">
@@ -324,6 +320,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Hdc-wt-jhf"/>
                     </view>
+                    <connections>
+                        <outlet property="vehicleTable" destination="8KM-Q9-0DJ" id="h2u-Bb-Ycx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aCB-FN-2cB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -488,7 +487,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fm4-HX-dry"/>
+        <segue reference="e4S-IV-LqU"/>
         <segue reference="reH-MR-w0G"/>
         <segue reference="1BW-Vy-Xdl"/>
     </inferredMetricsTieBreakers>

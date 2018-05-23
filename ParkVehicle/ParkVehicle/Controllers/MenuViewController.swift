@@ -53,9 +53,7 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         else
         {
-            self.dismiss(animated: true) {
-                
-            }
+            self.navigationController?.popViewController(animated: true)
         }
     }
 

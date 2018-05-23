@@ -35,6 +35,9 @@ class AddNewVehicleViewController: UIViewController {
         apiManager.post(data: vehicleDictionary, path: myDict?.value(forKey: "PostNewVehicle") as! String) { (error,string) in
             
             print(error ?? "Posted successfully")
+            self.vehicleTitleTextField.text = ""
+            self.vehicleVRNTextField.text = ""
+            
         }
     }
     @IBAction func backAction(_ sender: Any) {

@@ -90,7 +90,7 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         if((cell?.textLabel?.text?.range(of: "vehicle")) != nil){
-            self.performSegue(withIdentifier: "showAddNewVehicle", sender: self)
+            self.performSegue(withIdentifier: "showVehicle", sender: self)
         }
     }
     
